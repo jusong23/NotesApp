@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import Kingfisher
 
 struct NotesView: View {
     var category: String?
@@ -100,24 +101,30 @@ struct NoteCardView: View {
         ZStack {
             Rectangle()
                 .fill(.clear)
-            
-            if showNote {
-                TextEditor(text: $note.content)
-                    .focused(isKeyboardEnabled)
-                    .font(.body)
-                    /// Custom Hint
-                    .overlay(alignment: .topLeading, content: {
-                        Text("Finish Work")
-                            .foregroundStyle(.gray)
-                            .padding(.leading, 5)
-                            .opacity(note.content.isEmpty ? 1 : 0)
-                            .allowsHitTesting(false)
-                    })
-                    .scrollContentBackground(.hidden)
-                    .multilineTextAlignment(.leading)
-                    .padding(15)
-                    .frame(maxWidth: .infinity)
-                    .background(.gray.opacity(0.15), in: .rect(cornerRadius: 12))
+            VStack() {
+                if showNote {
+                    TextEditor(text: $note.content) // (2) 텍스트를 입력하면 note.content에 저장 (앞에서 context.insert된거라 각각 독립임)
+                        .focused(isKeyboardEnabled)
+                        .font(.body)
+                        /// Custom Hint
+                        .overlay(alignment: .topLeading, content: {
+                            Text("Finish Work")
+                                .foregroundStyle(.gray)
+                                .padding(.leading, 5)
+                                .opacity(note.content.isEmpty ? 1 : 0)
+                                .allowsHitTesting(false)
+                        })
+                        .scrollContentBackground(.hidden)
+                        .multilineTextAlignment(.leading)
+                        .padding(15)
+                        .frame(maxWidth: .infinity)
+                        .background(.gray.opacity(0.15), in: .rect(cornerRadius: 12))
+                        .background(Color.red)
+                }
+                
+                if let range = note.content.range(of: ".png", options: [.caseInsensitive]) {
+                    BookMarkImageView(url: URL(string: note.content)!, size: CGSize(width: 20, height: 30))
+                }
             }
         }
         .onAppear {
@@ -126,6 +133,13 @@ struct NoteCardView: View {
         .onDisappear {
             showNote = false
         }
+    }
+    
+    private func contentToUrl(_ content: String) -> String {
+            note.imageUrl = content
+            print("wnthd content: \(content)")
+            print("wnthd note.imageUrl: \(note.imageUrl)")
+            return note.imageUrl
     }
 }
 

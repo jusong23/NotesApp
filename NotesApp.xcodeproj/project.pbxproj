@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		18ECE4132B04AB9C008BF2B2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 18ECE4122B04AB9C008BF2B2 /* Kingfisher */; };
+		18ECE4152B04BAFA008BF2B2 /* BookMarkImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ECE4142B04BAFA008BF2B2 /* BookMarkImageView.swift */; };
 		AD1D73D92AE7CB2200B85892 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1D73D82AE7CB2200B85892 /* Note.swift */; };
 		AD1D73DB2AE7CB4400B85892 /* NoteCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1D73DA2AE7CB4400B85892 /* NoteCategory.swift */; };
 		AD1D73DE2AE7CBCC00B85892 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1D73DD2AE7CBCC00B85892 /* Home.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18ECE4142B04BAFA008BF2B2 /* BookMarkImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarkImageView.swift; sourceTree = "<group>"; };
 		AD1D73D82AE7CB2200B85892 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		AD1D73DA2AE7CB4400B85892 /* NoteCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCategory.swift; sourceTree = "<group>"; };
 		AD1D73DD2AE7CBCC00B85892 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				AD1D73DF2AE7D00300B85892 /* NotesView.swift */,
+				18ECE4142B04BAFA008BF2B2 /* BookMarkImageView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				AD62A1772AE6AB82002811A2 /* ContentView.swift in Sources */,
 				AD1D73DB2AE7CB4400B85892 /* NoteCategory.swift in Sources */,
 				AD1D73E02AE7D00300B85892 /* NotesView.swift in Sources */,
+				18ECE4152B04BAFA008BF2B2 /* BookMarkImageView.swift in Sources */,
 				AD1D73DE2AE7CBCC00B85892 /* Home.swift in Sources */,
 				AD62A1752AE6AB82002811A2 /* NotesAppApp.swift in Sources */,
 				AD1D73D92AE7CB2200B85892 /* Note.swift in Sources */,
