@@ -126,7 +126,7 @@ struct Home: View {
                 HStack(spacing: 10) {
                     Button("", systemImage: "plus") {
                         /// Adding New Note
-                        let note = Note(content: "")
+                        let note = Note(content: "", imageUrl: "") // (1) Note 프로퍼티 초기화
                         context.insert(note)
                     }
                     
