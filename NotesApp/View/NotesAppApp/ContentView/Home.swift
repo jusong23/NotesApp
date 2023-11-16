@@ -37,24 +37,56 @@ struct Home: View {
                 /// User Created Categories
                 Section {
                     ForEach(categories) { category in
-                        Text(category.categoryTitle)
-                            .tag(category.categoryTitle)
-                            .foregroundStyle(selectedTag == category.categoryTitle ? Color.primary : .gray)
-                            /// Some basic Editing Options
-                            .contextMenu {
-                                Button("Rename") {
-                                    /// Placing the Already Having title in the TextField
-                                    categoryTitle = category.categoryTitle
-                                    requestedCategory = category
-                                    renameRequest = true
-                                }
+                        if (isExist(category.categoryTitle)) {
+                            HStack() {
+                                Image("ic_swift")
                                 
-                                Button("Delete") {
-                                    categoryTitle = category.categoryTitle
-                                    requestedCategory = category
-                                    deleteRequest = true
-                                }
+                                Text(category.categoryTitle)
+                                    .tag(category.categoryTitle)
+                                    .foregroundStyle(selectedTag == category.categoryTitle ? Color.primary : .gray)
+                                    /// Some basic Editing Options
+                                    .contextMenu {
+                                        Button("Rename") {
+                                            /// Placing the Already Having title in the TextField
+                                            categoryTitle = category.categoryTitle
+                                            requestedCategory = category
+                                            renameRequest = true
+                                        }
+                                        
+                                        Button("Delete") {
+                                            categoryTitle = category.categoryTitle
+                                            requestedCategory = category
+                                            deleteRequest = true
+                                        }
+                                    }
+                                    .background(Color(hex: getColor(category.categoryTitle)))
+                                    .foregroundColor(.white)
+                                    .cornerRadius(4)
+                                    .font(.title3)
+                                    .listRowBackground(isDark ? Color(hex: "575452") : Color(hex: "E2E1DF"))
                             }
+
+                        } else {
+                            Text(category.categoryTitle)
+                                .tag(category.categoryTitle)
+                                .foregroundStyle(selectedTag == category.categoryTitle ? Color.primary : .gray)
+                                /// Some basic Editing Options
+                                .contextMenu {
+                                    Button("Rename") {
+                                        /// Placing the Already Having title in the TextField
+                                        categoryTitle = category.categoryTitle
+                                        requestedCategory = category
+                                        renameRequest = true
+                                    }
+                                    
+                                    Button("Delete") {
+                                        categoryTitle = category.categoryTitle
+                                        requestedCategory = category
+                                        deleteRequest = true
+                                    }
+                                }
+                                .listRowBackground(isDark ? Color(hex: "575452") : Color(hex: "E2E1DF"))
+                        }
                     }
                 } header: {
                     HStack(spacing: 5) {
@@ -68,6 +100,7 @@ struct Home: View {
                     }
                 }
             }
+            .background(isDark ? Color(hex: "575452") : Color(hex: "#E2E1DF"))
         } detail: {
             /// Notes View With Dynamic Filtering Based on the Category
             NotesView(category: selectedTag, allCategories: categories)
@@ -139,6 +172,17 @@ struct Home: View {
             }
         }
         .preferredColorScheme(isDark ? .dark : .light)
+    }
+    
+    func isExist(_ categoryTitle: String) -> Bool {
+        if (LanguageSet.contents.contains(where: { $0.name == categoryTitle })) { return true } else { return false }
+    }
+    
+    func getColor(_ categoryTitle: String) -> String {
+        if let index = LanguageSet.contents.firstIndex(where: { $0.name == categoryTitle }) {
+            return LanguageSet.contents[index].colorCode
+        }
+        return ""
     }
 }
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1832622E2B05E5C7004ED439 /* LanguageSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1832622D2B05E5C7004ED439 /* LanguageSet.swift */; };
+		183262312B05F4DB004ED439 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183262302B05F4DB004ED439 /* UIColor.swift */; };
 		18ECE4132B04AB9C008BF2B2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 18ECE4122B04AB9C008BF2B2 /* Kingfisher */; };
 		18ECE4152B04BAFA008BF2B2 /* BookMarkImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ECE4142B04BAFA008BF2B2 /* BookMarkImageView.swift */; };
 		AD1D73D92AE7CB2200B85892 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1D73D82AE7CB2200B85892 /* Note.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1832622D2B05E5C7004ED439 /* LanguageSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSet.swift; sourceTree = "<group>"; };
+		183262302B05F4DB004ED439 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		18ECE4142B04BAFA008BF2B2 /* BookMarkImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarkImageView.swift; sourceTree = "<group>"; };
 		AD1D73D82AE7CB2200B85892 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		AD1D73DA2AE7CB4400B85892 /* NoteCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCategory.swift; sourceTree = "<group>"; };
@@ -45,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1832622F2B05F4D2004ED439 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				183262302B05F4DB004ED439 /* UIColor.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		18ECE40D2B049C03008BF2B2 /* NotesAppApp */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +89,7 @@
 			children = (
 				AD1D73DA2AE7CB4400B85892 /* NoteCategory.swift */,
 				AD1D73D82AE7CB2200B85892 /* Note.swift */,
+				1832622D2B05E5C7004ED439 /* LanguageSet.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -109,6 +122,7 @@
 		AD62A1732AE6AB82002811A2 /* NotesApp */ = {
 			isa = PBXGroup;
 			children = (
+				1832622F2B05F4D2004ED439 /* Extension */,
 				AD1D73D72AE7CB1B00B85892 /* Model */,
 				AD1D73DC2AE7CBC500B85892 /* View */,
 				AD62A1782AE6AB83002811A2 /* Assets.xcassets */,
@@ -206,6 +220,8 @@
 				AD1D73DB2AE7CB4400B85892 /* NoteCategory.swift in Sources */,
 				AD1D73E02AE7D00300B85892 /* NotesView.swift in Sources */,
 				18ECE4152B04BAFA008BF2B2 /* BookMarkImageView.swift in Sources */,
+				183262312B05F4DB004ED439 /* UIColor.swift in Sources */,
+				1832622E2B05E5C7004ED439 /* LanguageSet.swift in Sources */,
 				AD1D73DE2AE7CBCC00B85892 /* Home.swift in Sources */,
 				AD62A1752AE6AB82002811A2 /* NotesAppApp.swift in Sources */,
 				AD1D73D92AE7CB2200B85892 /* Note.swift in Sources */,

@@ -119,12 +119,11 @@ struct NoteCardView: View {
                         .padding(15)
                         .frame(maxWidth: .infinity)
                         .background(.gray.opacity(0.15), in: .rect(cornerRadius: 12))
-                        .background(Color.red)
                 }
                 
-                if let range = note.content.range(of: ".png", options: [.caseInsensitive]) {
-                    BookMarkImageView(url: URL(string: note.content)!, size: CGSize(width: 20, height: 30))
-                }
+//                if let range = note.content.range(of: ".png", options: [.caseInsensitive]) {
+//                    BookMarkImageView(url: URL(string: note.content)!, size: CGSize(width: 20, height: 30))
+//                }
             }
         }
         .onAppear {
@@ -133,13 +132,6 @@ struct NoteCardView: View {
         .onDisappear {
             showNote = false
         }
-    }
-    
-    private func contentToUrl(_ content: String) -> String {
-            note.imageUrl = content
-            print("wnthd content: \(content)")
-            print("wnthd note.imageUrl: \(note.imageUrl)")
-            return note.imageUrl
     }
 }
 
